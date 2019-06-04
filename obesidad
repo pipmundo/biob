@@ -28,24 +28,4 @@ plt.legend(loc="upper right")
 plt.show()
 plt.close()
 
-kids_values = data_age['Under 16'].values
-x_axis = range(len(kids_values))
-x_axis2 = range(15)
 
-poly_degree = 5
-
-curve_fit = np.polyfit(x_axis, kids_values, poly_degree)
-
-poly_interp = np.poly1d(curve_fit)
-
-poly_fit_values = []
-
-for i in range(len(x_axis)):
-poly_fit_values.append(poly_interp(i))
-
-#Representamos los datos#
-
-plt.plot(x_axis, poly_fit_values, "-r", label = "Fitted")
-plt.plot(x_axis, kids_values, "-b", label = "Orig")
-
-plt.legend(loc="upper right")
